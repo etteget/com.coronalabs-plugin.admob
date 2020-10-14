@@ -6,12 +6,12 @@ This is a fork of Solar2D (formerly know as CoronaSDK) AdMob plugin. This has be
 * document the versions of the used libraries
 * document some info how to make compatible with Firebase Analytics plugin
 * document some of the steps used to build an app that uses firebaseAnalytics plugin, adMob plugin and notifications plugin (all of these plugins use Firebase frameworks and may have conflicting versions of those frameworks)
-* trying to fix ["missing close"] (https://forums.solar2d.com/t/admob-rewarded-video-fixed/351876/8) button on Android video reward ads.
+* trying to fix ["missing close"](https://forums.solar2d.com/t/admob-rewarded-video-fixed/351876/8) button on Android video reward ads.
 * store these notes
 
 The development computer used is Mac OS X. I guess all of these steps can be done also in Windows computers but I have not tried out that.
 
-[A blog article] (https://cleanseagame.docommit.com/blog/blog_solar2d_admob_notifications_firebase_plugins_on_ios.html) that explains how to get plugin.notifications, plugin.firebaseAnalytics and plugin.admob work together.
+[A blog article](https://cleanseagame.docommit.com/blog/blog_solar2d_admob_notifications_firebase_plugins_on_ios.html) that explains how to get plugin.notifications, plugin.firebaseAnalytics and plugin.admob work together.
 
 # Used AdMob version from Google:
 
