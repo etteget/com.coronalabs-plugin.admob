@@ -6,11 +6,13 @@ This is a fork of Solar2D (formerly know as CoronaSDK) AdMob plugin. This has be
 * document the versions of the used libraries
 * ensure compatibility with Firebase Analytics
 * document some of the steps used to build an app that uses firebaseAnalytics plugin, adMob plugin and notifications plugin (all of these plugins use Firebase frameworks and may have conflicting versions of those frameworks)
+* trying to fix ["missing close"] (https://forums.solar2d.com/t/admob-rewarded-video-fixed/351876/8) button on Android video reward ads.
 
-All of this has been done only to get the plugins to run and work together on iOS side. The development computer used is Mac OS X.
-On Android side no changes to the existing plugins was needed in order to get everything to work.
+The development computer used is Mac OS X. I guess all of these steps can be done also in Windows computers but I have not tried out that.
 
-# Used AdMob version:
+[A blog article] (https://forums.solar2d.com/t/admob-rewarded-video-fixed/351876/8) that explains how to get plugin.notifications, plugin.firebaseAnalytics and plugin.admob work together.
+
+# Used AdMob version from Google:
 
 * Version that is part of firebase-ios-sdk 6.32.0, downloaded from https://github.com/firebase/firebase-ios-sdk/releases/tag/CocoaPods-6.32.0
 * Based on Readme.md on that file we have to use only these two libraries:
@@ -54,13 +56,7 @@ On Android side no changes to the existing plugins was needed in order to get ev
 Another plugin that uses firebase. It would be great to separate local notifications that probably do not need
 Firebase :)
 
-* At the moment we have to strip old files a way
-* cd ~/Solar2DPlugins/Caches/Solar2Directory/coronalabs/com.coronalabs/plugin.notifications.v2/iphone
-* open data.tgz
-
 * sources of the notifications plugin: https://github.com/scottrules44/firebaseAnalytics-source
-* very old but might be up-to-date with the current plugin version?
-
 
 # multiple xcode versions
 
@@ -73,6 +69,8 @@ sudo xcode-select -s /Applications/Xcode10.app
 * https://firebase.google.com/docs/admob/ios/quick-start
 * https://github.com/firebase/quickstart-ios
 * https://github.com/firebase/firebase-ios-sdk
+
+
 
 
 # Original text in Coronalabs github
