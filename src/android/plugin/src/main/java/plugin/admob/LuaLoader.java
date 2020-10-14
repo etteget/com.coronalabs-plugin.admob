@@ -256,6 +256,8 @@ public class LuaLoader implements JavaFunction, CoronaRuntimeListener
       coronaActivity.runOnUiThread(new Runnable() {
         @Override
         public void run() {
+          Log.i(CORONA_TAG, "admob.onSuspended() was called.");
+          
           String adUnitId = (String)admobObjects.get(TYPE_BANNER);
           if (adUnitId != null) {
             AdView banner = (AdView)admobObjects.get(adUnitId);
@@ -264,11 +266,25 @@ public class LuaLoader implements JavaFunction, CoronaRuntimeListener
             }
           }
 
+          // etteget 14.10.2020: 
+          // Android application gets suspended when fullscreen ad is
+          // lauched. At least on the following Android devices:
+          //
+          // * Nokia 7.1 with Android 10.
+          // * Huawei MYA-L41 with Android 6.0
+          // * Lenovo TB-7104F with Android 8.1.
+          //
+          // I did not actually have a test device where this would not happen.
+          //
+          // This may cause the x (that would allow closing the video) to be not visible.
+          // Not even after the end of the video. Therefore pause commented out.
+          //
           adUnitId = (String)admobObjects.get(TYPE_REWARDEDVIDEO);
           if (adUnitId != null) {
             RewardedVideoAd rewardedAd = (RewardedVideoAd)admobObjects.get(adUnitId);
             if (rewardedAd != null) {
-              rewardedAd.pause(coronaActivity.getApplicationContext());
+              Log.i(CORONA_TAG, "admob.onSuspended() was trying to pause full screen rewarded video ad when actually showing it.");
+              // rewardedAd.pause(coronaActivity.getApplicationContext());
             }
           }
         }
